@@ -469,13 +469,14 @@
       flex:0 0 18px;
     }
 
-    .portrait-wrap{
-      position:relative;
-      width:100%;
-      max-width:470px;
-      margin-left:auto;
-      animation:heroIn .9s .08s ease both;
-    }
+  .portrait-wrap{
+  position:relative;
+  width:100%;
+  max-width:470px;
+  margin-left:auto;
+  transform:translateY(-24px);
+  animation:heroIn .9s .08s ease both;
+}
 
     .portrait-card{
       position:relative;
@@ -527,22 +528,49 @@
   font-weight:850;
 }
 
-    .portrait-badge i{
-      width:9px;
-      height:9px;
-      border-radius:50%;
-      background:var(--yellow);
-      box-shadow:0 0 0 5px rgba(244,200,75,.15);
-    }
+.portrait-badge i{
+  width:9px;
+  height:9px;
+  border-radius:50%;
+  background:var(--yellow);
+  box-shadow:0 0 0 5px rgba(244,200,75,.15);
+}
 
-    .portrait-actions{
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      gap:10px;
-      margin-top:18px;
-      flex-wrap:wrap;
-    }
+.portrait-think{
+  position:absolute;
+  z-index:5;
+  top:-48px;
+  left:58%;
+  width:42px;
+  height:42px;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  background:#fff;
+  border:2px solid var(--violet);
+  box-shadow:0 10px 24px rgba(109,74,255,.18);
+  font-size:22px;
+  transform:rotate(-8deg);
+  animation:thinkFloat 2.8s ease-in-out infinite;
+}
+
+@keyframes thinkFloat{
+  0%,100%{
+    transform:translateY(0) rotate(-8deg);
+  }
+  50%{
+    transform:translateY(-6px) rotate(4deg);
+  }
+}
+
+.portrait-actions{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:10px;
+  margin-top:18px;
+  flex-wrap:wrap;
+}
 
     /* ---------- CARDS ---------- */
 
@@ -1532,10 +1560,14 @@
                 fetchpriority="high">
             </div>
 
-            <div class="portrait-badge">
-              <i aria-hidden="true"></i>
-              Open to data & analytics opportunities
-            </div>
+         <div class="portrait-badge">
+  <i aria-hidden="true"></i>
+  Open to Data & Analytics Roles
+</div>
+
+<span class="portrait-think" aria-hidden="true">🤔</span>
+
+<div class="portrait-actions">
 
             <div class="portrait-actions">
               <a class="btn btn-primary" href="mailto:saideeppallela@gmail.com">
