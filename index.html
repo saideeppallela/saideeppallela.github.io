@@ -134,7 +134,19 @@
       color:#43516a;
       max-width:720px;
     }
-    .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+    .hero-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:34px;
+  align-items:center;
+}
+    .hero-actions .cta-logo{
+  width:20px;
+  height:20px;
+  object-fit:contain;
+  flex-shrink:0;
+}
     .btn{
       display:inline-flex;align-items:center;justify-content:center;gap:9px;
       min-height:48px;padding:0 18px;border-radius:13px;
@@ -163,6 +175,15 @@
       border:1px solid #d8e1ed;box-shadow:var(--shadow);
       transform:translateY(0);
     }
+
+    .portrait-actions{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:12px;
+  margin-top:18px;
+  flex-wrap:wrap;
+}
     .portrait-card:before{
       content:"";position:absolute;inset:0;
       background:linear-gradient(135deg,rgba(37,99,235,.12),transparent 42%,rgba(14,165,164,.07));
@@ -298,6 +319,133 @@
     .fact{padding:14px 16px;background:#fff;border:1px solid var(--line);border-radius:14px;font-weight:760}
     .fact span{color:var(--muted);font-weight:650}
 
+    /* NEW ABOUT SECTION */
+
+#about .about-main{
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  align-items:center;
+  gap:64px;
+  margin-top:10px;
+}
+
+    #about .about-content{
+  max-width:700px;
+}
+
+#about .about-lead{
+  margin:0;
+  font-size:1.18rem;
+  line-height:1.75;
+  color:var(--ink);
+  font-weight:650;
+}
+
+#about .about-copy{
+  margin:22px 0 0;
+  font-size:1rem;
+  line-height:1.8;
+  color:#43516a;
+  max-width:680px;
+}
+
+    #about .about-image-wrap{
+  width:100%;
+  max-width:520px;
+  margin-left:auto;
+}
+
+#about .about-image{
+  display:block;
+  width:100%;
+  aspect-ratio:1 / 1;
+  object-fit:cover;
+  border-radius:30px;
+  border:1px solid #d8e1ed;
+  box-shadow:var(--shadow);
+}
+
+    #about .about-info-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+  margin-top:48px;
+}
+
+#about .about-info-card{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:24px;
+  min-height:125px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+    #about .about-info-label{
+  margin:0 0 12px;
+  font-size:.72rem;
+  font-weight:850;
+  letter-spacing:.12em;
+  color:var(--accent);
+}
+
+#about .about-info-card strong{
+  display:block;
+  font-size:.98rem;
+  line-height:1.5;
+  color:var(--ink);
+}
+
+#about .about-info-card span{
+  display:block;
+  margin-top:7px;
+  font-size:.9rem;
+  line-height:1.5;
+  color:#526078;
+}
+
+    @media (max-width:900px){
+
+  #about .about-main{
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+  }
+
+  #about .about-info-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+}
+
+    @media (max-width:760px){
+
+  #about .about-main{
+    grid-template-columns:1fr;
+    gap:34px;
+  }
+
+  #about .about-content{
+    max-width:none;
+  }
+
+  #about .about-image-wrap{
+    max-width:100%;
+    margin-left:0;
+  }
+
+  #about .about-info-grid{
+    grid-template-columns:1fr;
+    gap:14px;
+    margin-top:34px;
+  }
+
+  #about .about-info-card{
+    min-height:auto;
+  }
+
+}
     /* FOOTER CTA */
     .final{
       padding:0 0 70px;
@@ -414,28 +562,13 @@
       <div class="hero-grid">
         <div class="hero-copy">
 
-<p class="eyebrow">DATA &amp; ANALYTICS • PROBLEM SOLVING</p>
+<p class="eyebrow">DATA • ANALYTICS • PROBLEM SOLVING</p>
 
 <h1>Hi, I’m Saideep<br>Pallela.</h1>
 
 <p class="hero-lead">
-  Turning business questions into practical data solutions.
-  I use SQL, Excel, Python and Power BI to analyze problems,
-  build practical solutions, and turn data into clear,
-  actionable insights.
+  I solve business problems with data, turning complex questions into clear insights and practical solutions.
 </p>
-
-<div class="hero-actions">
-
-  <a class="btn btn-primary" href="#projects">
-    Explore My Projects <span aria-hidden="true">→</span>
-  </a>
-
-  <a class="btn btn-light" href="#contact">
-    Contact Me
-  </a>
-
-</div>
 
 <div class="tool-strip" aria-label="Core technologies">
 
@@ -465,14 +598,42 @@
   </div>
 
 </div>
+
+<div class="hero-actions">
+
+  <a class="btn btn-light" href="https://www.linkedin.com/in/saideeppallela/" target="_blank" rel="noopener noreferrer">
+    <img src="assets/icons/linkedin.png" alt="" class="cta-logo">
+    Connect on LinkedIn
+  </a>
+
+  <a class="btn btn-light" href="https://github.com/saideppallela" target="_blank" rel="noopener noreferrer">
+    <img src="assets/icons/github.png" alt="" class="cta-logo">
+    Explore My GitHub
+  </a>
+
+  <a class="btn btn-light" href="mailto:saideeppallela@gmail.com">
+    <img src="assets/icons/gmail.png" alt="" class="cta-logo">
+    Discuss a Role
+  </a>
+
 </div>
-
-
+          
 <div class="portrait-wrap">
 
   <div class="portrait-card">
     <img src="assets/images/saideep-profile.png" alt="Saideep Pallela, Data & Analytics Professional" fetchpriority="high">
   </div>
+
+  <div class="portrait-actions">
+    <a class="btn btn-primary" href="mailto:saideeppallela@gmail.com">
+      Hire Me →
+    </a>
+
+    <a class="btn btn-light" href="assets/documents/saideep-pallela-cv.pdf" download>
+      Download My CV ↓
+    </a>
+  </div>
+
 </div>
 
 </div>
@@ -633,86 +794,165 @@
 
     <div class="section-head reveal">
       <p class="eyebrow">About</p>
-      <h2>Turning business questions into practical data solutions.</h2>
+      <h2>I turn business questions into practical data solutions.</h2>
     </div>
 
-    <div class="about-grid">
+    <div class="about-main">
 
-      <!-- Left Card -->
-      <div class="card card-pad reveal">
+      <!-- Left: About Content -->
+      <div class="about-content reveal">
+
         <p class="about-lead">
-          I’m an MBA graduate focused on solving business problems with data,
-          combining analytical thinking with practical tools and clear
-          communication.
+          I’m an MBA graduate in Business Analytics &amp; Data Science from
+          Lovely Professional University, focused on solving business problems
+          through practical data analysis.
         </p>
 
-        <div class="fact-list">
-          <div class="fact">
-            Education
-            <span>MBA · Business Analytics &amp; Data Science</span>
-          </div>
+        <p class="about-copy">
+          My background in operations and demand analysis gave me an
+          understanding of customer needs, business processes and operational
+          decision-making. I now combine that business perspective with
+          hands-on work in SQL, Excel, Python and Power BI.
+        </p>
 
-          <div class="fact">
-            Core stack
-            <span>SQL Server · PostgreSQL · Excel · Python · Power BI</span>
-          </div>
+        <p class="about-copy">
+          I build projects that demonstrate how I explore data, analyze
+          patterns, validate results and communicate practical insights.
+        </p>
 
-          <div class="fact">
-            Work style
-            <span>Projects · Data practice · Technical documentation</span>
-          </div>
-        </div>
       </div>
 
-      <!-- Right Card -->
-      <div class="card card-pad reveal">
-        <p class="about-copy">
-          My approach is simple: understand the business question, work with
-          the data, validate the result and communicate the findings clearly.
-          I focus on producing work that is accurate, practical and easy to
-          review.
-        </p>
+      <!-- Right: About Image -->
+      <div class="about-image-wrap reveal">
+        <img
+          src="assets/images/saideep-about-me.png"
+          alt="Saideep Pallela working with data and analytics tools"
+          class="about-image">
+      </div>
 
-        <p class="about-copy">
-          This portfolio documents that process through projects, SQL practice,
-          dashboards and technical work. As I gain professional experience,
-          the portfolio will continue to evolve with stronger projects and
-          real-world problem solving.
-        </p>
+    </div>
+
+    <!-- About Information Strip -->
+    <div class="about-info-grid">
+
+      <div class="about-info-card reveal">
+        <p class="about-info-label">EDUCATION</p>
+        <strong>MBA · Business Analytics &amp; Data Science</strong>
+        <span>Lovely Professional University</span>
+      </div>
+
+      <div class="about-info-card reveal">
+        <p class="about-info-label">CORE TOOLKIT</p>
+        <strong>SQL Server · PostgreSQL</strong>
+        <span>Excel · Python · Power BI</span>
+      </div>
+
+      <div class="about-info-card reveal">
+        <p class="about-info-label">HOW I WORK</p>
+        <strong>Business Question</strong>
+        <span>→ Data → Analysis → Insight</span>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<section class="final">
+  <div class="container">
+    <div class="final-card reveal">
+
+      <p class="eyebrow final-eyebrow">LET'S CONNECT</p>
+
+      <h2>Have a role or opportunity in mind?</h2>
+
+      <p class="final-description">
+        Explore my projects, see how I solve business problems with data,
+        and get in touch about opportunities.
+      </p>
+
+      <div class="final-actions">
+
+        <a class="btn btn-light" href="#projects">
+          Explore My Projects <span aria-hidden="true">→</span>
+        </a>
+
+        <a class="btn btn-light"
+           href="https://www.linkedin.com/in/saideppallela/"
+           target="_blank"
+           rel="noopener noreferrer">
+          <img
+            src="assets/icons/linkedin.png"
+            alt=""
+            class="final-cta-logo">
+          Connect on LinkedIn
+        </a>
+
+        <a class="btn btn-light"
+           href="mailto:saideeppallela@gmail.com">
+          <img
+            src="assets/icons/gmail.png"
+            alt=""
+            class="final-cta-logo">
+          Discuss a Role
+        </a>
+
       </div>
 
     </div>
   </div>
 </section>
-
-  <section class="final">
-    <div class="container">
-      <div class="final-card reveal">
-        <p class="eyebrow" style="color:#8bb5ff">Let's connect</p>
-        <h2>Have a data problem, project or opportunity to discuss?</h2>
-        <p>Explore the work, inspect the evidence and get in touch directly.</p>
-        <div class="final-actions">
-          <a class="btn btn-light" href="#projects">Explore projects →</a>
-          <a class="btn btn-light" href="https://www.linkedin.com/in/saideppallela/" target="_blank" rel="noopener">LinkedIn ↗</a>
-          <a class="btn btn-light" href="mailto:saideeppallela@gmail.com">Email Saideep ↗</a>
-        </div>
-      </div>
-    </div>
-  </section>
 </main>
 
 <footer>
   <div class="container">
     <div class="footer-row">
-      <div>
+
+      <div class="footer-identity">
         <strong>Saideep Pallela</strong>
-        <div class="footer-note">Data & Analytics Professional</div>
+        <div class="footer-note">
+          Data • Analytics • Problem Solving
+        </div>
       </div>
+
+      <div class="footer-note footer-tagline">
+        Business Problems → Data → Insights → Solutions
+      </div>
+
       <div class="footer-links">
-        <a href="https://github.com/saideppallela" target="_blank" rel="noopener">GitHub</a>
-        <a href="https://www.linkedin.com/in/saideppallela/" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="mailto:saideeppallela@gmail.com">Email</a>
+
+        <a
+          href="https://github.com/saideppallela"
+          target="_blank"
+          rel="noopener noreferrer">
+          <img
+            src="assets/icons/github.png"
+            alt=""
+            class="footer-logo">
+          GitHub
+        </a>
+
+        <a
+          href="https://www.linkedin.com/in/saideppallela/"
+          target="_blank"
+          rel="noopener noreferrer">
+          <img
+            src="assets/icons/linkedin.png"
+            alt=""
+            class="footer-logo">
+          LinkedIn
+        </a>
+
+        <a href="mailto:saideeppallela@gmail.com">
+          <img
+            src="assets/icons/gmail.png"
+            alt=""
+            class="footer-logo">
+          Email
+        </a>
+
       </div>
+
     </div>
   </div>
 </footer>
