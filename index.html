@@ -181,28 +181,43 @@
     .float-card strong{display:block;margin-top:6px;font-size:.92rem}
     @keyframes float{50%{transform:translateY(-7px)}}
 
-    /* LOGO SYSTEM */
-    .tool-strip{
-      margin-top:44px;padding:14px 0 0;
-      display:flex;flex-wrap:wrap;gap:10px;
-    }
-    .tool{
-      display:flex;align-items:center;gap:10px;
-      padding:10px 13px;background:rgba(255,255,255,.76);
-      border:1px solid var(--line);border-radius:13px;
-      font-size:.83rem;font-weight:820;color:#26344a;
-      box-shadow:0 5px 16px rgba(15,23,42,.035);
-    }
-    .logo{
-      width:28px;height:28px;object-fit:contain;flex:0 0 28px;
-    }
-    .logo.ssms{object-fit:contain;border-radius:6px}
-    .logo.pgadmin{object-fit:contain}
-    .logo-fallback{
-      width:28px;height:28px;border-radius:7px;display:grid;place-items:center;
-      background:#e8eef7;color:#25334a;font-size:.62rem;font-weight:900;flex:0 0 28px;
-    }
+   /* LOGO SYSTEM */
+.tool-strip{
+  margin-top:40px;
+  padding:0;
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
 
+.tool{
+  display:flex;
+  align-items:center;
+  gap:9px;
+  min-height:46px;
+  padding:8px 13px;
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:13px;
+  font-size:.82rem;
+  font-weight:800;
+  color:#26344a;
+  box-shadow:0 4px 14px rgba(15,23,42,.035);
+  transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease;
+}
+
+.tool:hover{
+  transform:translateY(-2px);
+  box-shadow:0 8px 20px rgba(15,23,42,.07);
+  border-color:#cbd7e6;
+}
+
+.logo{
+  width:26px;
+  height:26px;
+  object-fit:contain;
+  flex:0 0 26px;
+}
     /* CARDS */
     .grid-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
     .grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
@@ -372,12 +387,12 @@
 <header class="nav-wrap">
   <div class="container">
     <nav aria-label="Primary navigation">
-      <a class="brand" href="#home" aria-label="Saideep Pallela home">Saideep<span>.</span></a>
+      <a class="brand" href="#home" aria-label="Saideep Pallela home">Saideep Pallela</a>
       <button class="menu-btn" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false">Menu</button>
       <div class="nav-links" id="navLinks">
         <a href="#projects">Projects</a>
         <a href="#practice">Practice</a>
-        <a href="#knowledge">Knowledge</a>
+        <a href="#blog">Blog</a>
         <a href="#certifications">Certifications</a>
         <a href="#about">About</a>
         <a class="nav-contact" href="mailto:saideeppallela@gmail.com">Contact</a>
@@ -395,61 +410,63 @@
           <h1>Saideep<br>Pallela</h1>
           <p class="hero-lead">Turning business questions into practical data solutions — from SQL analysis and Excel reporting to Python workflows and Power BI.</p>
 
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="#projects">Explore my work <span aria-hidden="true">→</span></a>
-            <a class="btn btn-light" href="https://github.com/saideppallela" target="_blank" rel="noopener">View GitHub <span aria-hidden="true">↗</span></a>
-            <a class="btn btn-dark" href="mailto:saideeppallela@gmail.com">Email me <span aria-hidden="true">↗</span></a>
-          </div>
+        <div class="hero-actions">
+  <a class="btn btn-primary" href="#projects">
+    Explore my work <span aria-hidden="true">→</span>
+  </a>
 
-          <div class="evidence-line" aria-label="Portfolio evidence">
-            <span>Projects</span><i class="dot"></i>
-            <span>Practice</span><i class="dot"></i>
-            <span>Technical writing</span><i class="dot"></i>
-            <span>Certifications</span>
-          </div>
+  <a class="btn btn-light" href="https://github.com/saideppallela/" target="_blank" rel="noopener">
+    View GitHub <span aria-hidden="true">↗</span>
+  </a>
 
-          <div class="tool-strip" aria-label="Core technologies">
-            <div class="tool">
-              <img class="logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/microsoftsqlserver/microsoftsqlserver-original.svg" alt="Microsoft SQL Server logo" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'">
-              <span class="logo-fallback" style="display:none">SQL</span>
-              Microsoft SQL Server
-            </div>
-            <div class="tool">
-              <img class="logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/postgresql/postgresql-original.svg" alt="PostgreSQL logo" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'">
-              <span class="logo-fallback" style="display:none">PG</span>
-              PostgreSQL
-            </div>
-            <div class="tool">
-              <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/3/34/Microsoft_Office_Excel_%282019%E2%80%93present%29.svg" alt="Microsoft Excel logo" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'">
-              <span class="logo-fallback" style="display:none">XL</span>
-              Excel
-            </div>
-            <div class="tool">
-              <img class="logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/python/python-original.svg" alt="Python logo" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'">
-              <span class="logo-fallback" style="display:none">PY</span>
-              Python
-            </div>
-            <div class="tool">
-              <img class="logo" src="https://raw.githubusercontent.com/microsoft/PowerBI-Icons/main/SVG/Power-BI.svg" alt="Microsoft Power BI logo" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'">
-              <span class="logo-fallback" style="display:none">BI</span>
-              Power BI
-            </div>
-          </div>
-        </div>
+  <a class="btn btn-light" href="https://www.linkedin.com/in/saideppallela/" target="_blank" rel="noopener">
+    View LinkedIn <span aria-hidden="true">↗</span>
+  </a>
 
-        <div class="portrait-wrap">
-          <div class="float-card">
-            <small>Working style</small>
-            <strong>Learn → Practice → Validate → Build</strong>
-          </div>
-          <div class="portrait-card">
-            <img src="assets/images/saideep-profile.png" alt="Saideep Pallela, Data & Analytics Professional" fetchpriority="high">
-            <div class="portrait-tag">SQL · Excel · Python · Power BI</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <a class="btn btn-dark" href="mailto:saideeppallela@gmail.com">
+    Email me <span aria-hidden="true">↗</span>
+  </a>
+</div>
+
+         <div class="tool-strip" aria-label="Core technologies">
+  <div class="tool">
+    <img class="logo" src="https://cdn.simpleicons.org/microsoftsqlserver" alt="Microsoft SQL Server logo">
+    <span>Microsoft SQL Server</span>
+  </div>
+
+  <div class="tool">
+    <img class="logo" src="https://cdn.simpleicons.org/postgresql" alt="PostgreSQL logo">
+    <span>PostgreSQL</span>
+  </div>
+
+  <div class="tool">
+    <img class="logo" src="https://cdn.simpleicons.org/microsoftexcel" alt="Microsoft Excel logo">
+    <span>Excel</span>
+  </div>
+
+  <div class="tool">
+    <img class="logo" src="https://cdn.simpleicons.org/python" alt="Python logo">
+    <span>Python</span>
+  </div>
+
+  <div class="tool">
+    <img class="logo" src="https://cdn.simpleicons.org/powerbi" alt="Microsoft Power BI logo">
+    <span>Power BI</span>
+  </div>
+</div>
+</div>
+
+<div class="portrait-wrap">
+
+  <div class="portrait-card">
+    <img src="assets/images/saideep-profile.png" alt="Saideep Pallela, Data & Analytics Professional" fetchpriority="high">
+  </div>
+</div>
+
+</div>
+</div>
+</div>
+</section>
 
   <section class="section" id="capabilities">
     <div class="container">
@@ -534,25 +551,6 @@
             <a href="https://github.com/saideppallela" target="_blank" rel="noopener">View GitHub profile →</a>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="knowledge">
-    <div class="container">
-      <div class="section-head reveal">
-        <p class="eyebrow">Knowledge</p>
-        <h2>Technical writing, project explanations and practical learnings.</h2>
-        <p>The Knowledge section will preserve the substance of the original articles while presenting them in a cleaner technical format.</p>
-      </div>
-
-      <div class="grid-2">
-        <article class="card card-pad article-card reveal"><div><div class="article-meta">Article</div><h3>FocuSee 2.0 Review (2026)</h3></div><span class="article-arrow">↗</span></article>
-        <article class="card card-pad article-card reveal"><div><div class="article-meta">Excel · Dashboard</div><h3>Blinkit Sales Analysis Dashboard</h3></div><span class="article-arrow">↗</span></article>
-        <article class="card card-pad article-card reveal"><div><div class="article-meta">Excel · HR Analytics</div><h3>HR Analytics Excel Dashboard</h3></div><span class="article-arrow">↗</span></article>
-        <article class="card card-pad article-card reveal"><div><div class="article-meta">Excel · Workforce Analytics</div><h3>Maven Careers Workforce & Wage Analytics Dashboard</h3></div><span class="article-arrow">↗</span></article>
-        <article class="card card-pad article-card reveal"><div><div class="article-meta">Excel · Road Safety</div><h3>Excel Road Accident Dashboard</h3></div><span class="article-arrow">↗</span></article>
-        <article class="card card-pad article-card reveal"><div><div class="article-meta">Coming next</div><h3>More project explanations and technical articles</h3></div><span class="article-arrow">→</span></article>
       </div>
     </div>
   </section>
