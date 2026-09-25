@@ -126,29 +126,41 @@
       justify-content:space-between;
       gap:24px;
     }
+.brand{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  font-weight:950;
+  letter-spacing:-.04em;
+  font-size:1.02rem;
+}
 
-    .brand{
-      display:inline-flex;
-      align-items:center;
-      gap:9px;
-      font-weight:950;
-      letter-spacing:-.04em;
-      font-size:1.05rem;
-    }
+.brand-logo{
+  width:32px;
+  height:32px;
+  display:grid;
+  place-items:center;
+  border-radius:10px;
+  background:var(--violet);
+  color:#fff;
+  font-size:.72rem;
+  font-weight:950;
+  letter-spacing:-.03em;
+  position:relative;
+  box-shadow:4px 4px 0 var(--yellow);
+  transition:transform .22s ease,box-shadow .22s ease;
+}
 
-    .brand-mark{
-      width:11px;
-      height:11px;
-      border-radius:4px;
-      background:var(--yellow);
-      box-shadow:5px 0 0 var(--violet);
-    }
+.brand:hover .brand-logo{
+  transform:translateY(-2px) rotate(-2deg);
+  box-shadow:6px 6px 0 var(--yellow);
+}
 
-    .nav-links{
-      display:flex;
-      align-items:center;
-      gap:4px;
-    }
+  .nav-links{
+  display:flex;
+  align-items:center;
+  gap:6px;
+}
 
     .nav-links a{
       padding:9px 12px;
@@ -374,24 +386,39 @@
       margin-top:36px;
     }
 
-    .hero-section-title{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      margin:0 0 13px;
-      color:var(--ink);
-      font-size:.7rem;
-      font-weight:950;
-      letter-spacing:.15em;
-      text-transform:uppercase;
-    }
+.hero-section-title{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  margin:0 0 15px;
+  color:var(--ink);
+  font-size:.78rem;
+  font-weight:950;
+  letter-spacing:.13em;
+  text-transform:uppercase;
+  position:relative;
+  padding-bottom:9px;
+}
 
-    .hero-section-title:after{
-      content:"";
-      height:1px;
-      width:80px;
-      background:linear-gradient(90deg,var(--yellow),transparent);
-    }
+.hero-section-title:before{
+  content:"";
+  width:5px;
+  height:5px;
+  border-radius:50%;
+  background:var(--yellow);
+  box-shadow:6px 0 0 var(--violet);
+}
+
+.hero-section-title:after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-5px;
+  width:100%;
+  height:2px;
+  border-radius:99px;
+  background:linear-gradient(90deg,var(--violet),var(--yellow));
+}
 
     .tool-strip{
       display:flex;
@@ -480,23 +507,25 @@
       z-index:1;
     }
 
-    .portrait-badge{
-      position:absolute;
-      z-index:4;
-      left:-18px;
-      bottom:30px;
-      display:flex;
-      align-items:center;
-      gap:10px;
-      padding:13px 15px;
-      border-radius:15px;
-      background:var(--ink);
-      color:#fff;
-      border:1px solid rgba(255,255,255,.1);
-      box-shadow:0 16px 35px rgba(24,20,45,.20);
-      font-size:.78rem;
-      font-weight:850;
-    }
+.portrait-badge{
+  position:absolute;
+  z-index:4;
+  right:-18px;
+  top:24px;
+  left:auto;
+  bottom:auto;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:13px 15px;
+  border-radius:15px;
+  background:var(--ink);
+  color:#fff;
+  border:1px solid rgba(255,255,255,.1);
+  box-shadow:0 16px 35px rgba(24,20,45,.20);
+  font-size:.78rem;
+  font-weight:850;
+}
 
     .portrait-badge i{
       width:9px;
@@ -1247,10 +1276,12 @@
         width:100%;
       }
 
-      .portrait-badge{
-        left:10px;
-        bottom:20px;
-      }
+.portrait-badge{
+  right:10px;
+  top:18px;
+  left:auto;
+  bottom:auto;
+}
 
       .section-head{
         margin-bottom:34px;
@@ -1401,22 +1432,22 @@
     <div class="container">
       <nav aria-label="Primary navigation">
         <a class="brand" href="#home" aria-label="Saideep Pallela home">
-          <span class="brand-mark" aria-hidden="true"></span>
-          Saideep Pallela
-        </a>
+  <span class="brand-logo" aria-hidden="true">SP</span>
+  <span>Saideep Pallela</span>
+</a>
 
         <button class="menu-btn" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false">
           Menu
         </button>
 
-        <div class="nav-links" id="navLinks">
-          <a href="#capabilities">Work</a>
-          <a href="#projects">Projects</a>
-          <a href="#practice">Practice</a>
-          <a href="#certifications">Credentials</a>
-          <a href="#about">About</a>
-          <a class="nav-contact" href="mailto:saideeppallela@gmail.com">Contact</a>
-        </div>
+<div class="nav-links" id="navLinks">
+  <a href="#capabilities">Work</a>
+  <a href="#projects">Projects</a>
+  <a href="#practice">GitHub Worklog</a>
+  <a href="#certifications">Certifications</a>
+  <a href="#about">About Me</a>
+  <a class="nav-contact" href="mailto:saideeppallela@gmail.com">Contact</a>
+</div>
       </nav>
     </div>
   </header>
