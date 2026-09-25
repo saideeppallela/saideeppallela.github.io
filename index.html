@@ -573,94 +573,120 @@
   flex-wrap:wrap;
 }
 
-    /* ---------- CARDS ---------- */
+   /* ---------- CARDS ---------- */
 
-    .grid-2{
-      display:grid;
-      grid-template-columns:repeat(2,minmax(0,1fr));
-      gap:20px;
-    }
+.workflow-rail{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  margin:0 0 28px;
+  padding:14px 18px;
+  border:1px solid var(--line);
+  border-radius:18px;
+  background:rgba(255,255,255,.72);
+  box-shadow:0 8px 24px rgba(34,25,72,.04);
+  color:var(--violet);
+  font-size:.68rem;
+  font-weight:950;
+  letter-spacing:.12em;
+}
 
-    .grid-3{
-      display:grid;
-      grid-template-columns:repeat(3,minmax(0,1fr));
-      gap:18px;
-    }
+.workflow-rail span{
+  transition:transform .25s ease,color .25s ease;
+}
 
-    .card{
-      background:var(--surface);
-      border:1px solid var(--line);
-      border-radius:var(--radius);
-      box-shadow:0 5px 18px rgba(34,25,72,.025);
-      transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;
-    }
+.workflow-rail b{
+  color:var(--yellow);
+  font-size:.95rem;
+  transition:transform .25s ease;
+}
 
-    .card:hover{
-      transform:translateY(-5px);
-      border-color:#d5ccf5;
-      box-shadow:var(--shadow-sm);
-    }
+.grid-2{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:20px;
+}
 
-    .card-pad{
-      padding:30px;
-    }
+.grid-3{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:18px;
+}
 
-    .capability{
-      min-height:235px;
-      display:flex;
-      flex-direction:column;
-      justify-content:space-between;
-      position:relative;
-      overflow:hidden;
-    }
+.card{
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  box-shadow:0 5px 18px rgba(34,25,72,.025);
+  transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;
+}
 
-    .capability:after{
-      content:"";
-      position:absolute;
-      width:90px;
-      height:90px;
-      right:-38px;
-      bottom:-42px;
-      border-radius:50%;
-      background:var(--yellow-soft);
-      transition:.3s ease;
-    }
+.card:hover{
+  transform:translateY(-5px);
+  border-color:#d5ccf5;
+  box-shadow:var(--shadow-sm);
+}
 
-    .capability:hover:after{
-      transform:scale(1.25);
-    }
+.card-pad{
+  padding:30px;
+}
 
-    .number{
-      color:#aaa2bb;
-      font-size:.7rem;
-      font-weight:950;
-      letter-spacing:.14em;
-    }
+.capability{
+  min-height:235px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  position:relative;
+  overflow:hidden;
+}
 
-    .card h3{
-      margin:15px 0 9px;
-      font-size:1.32rem;
-      line-height:1.2;
-      letter-spacing:-.03em;
-    }
+.capability:after{
+  content:"";
+  position:absolute;
+  width:90px;
+  height:90px;
+  right:-38px;
+  bottom:-42px;
+  border-radius:50%;
+  background:var(--yellow-soft);
+  transition:.3s ease;
+}
 
-    .card p{
-      margin:0;
-      color:var(--muted);
-    }
+.capability:hover:after{
+  transform:scale(1.25);
+}
 
-    .capability .mini{
-      display:inline-flex;
-      color:var(--violet);
-      font-size:.7rem;
-      font-weight:950;
-      letter-spacing:.13em;
-      text-transform:uppercase;
-      padding:5px 8px;
-      border-radius:8px;
-      background:var(--violet-soft);
-    }
+.number{
+  color:#aaa2bb;
+  font-size:.7rem;
+  font-weight:950;
+  letter-spacing:.14em;
+}
 
+.card h3{
+  margin:15px 0 9px;
+  font-size:1.32rem;
+  line-height:1.2;
+  letter-spacing:-.03em;
+}
+
+.card p{
+  margin:0;
+  color:var(--muted);
+}
+
+.capability .mini{
+  display:inline-flex;
+  color:var(--violet);
+  font-size:.7rem;
+  font-weight:950;
+  letter-spacing:.13em;
+  text-transform:uppercase;
+  padding:5px 8px;
+  border-radius:8px;
+  background:var(--violet-soft);
+}
     /* ---------- PROJECTS ---------- */
 
     .project-card{
@@ -1592,9 +1618,22 @@
         <div class="section-head reveal">
           <p class="eyebrow">HOW I SOLVE DATA PROBLEMS</p>
           <h2>I turn data problems into practical solutions.</h2>
-          <p>A connected skill set for solving data problems across analysis, reporting, transformation and operations.</p>
+          <p>I follow a practical workflow: define the question, query and transform the data, analyze and validate the result, then explain what it means.</p>
         </div>
-
+<div class="workflow-rail" aria-label="Data problem-solving workflow">
+  <span>DEFINE</span>
+  <b>→</b>
+  <span>QUERY</span>
+  <b>→</b>
+  <span>TRANSFORM</span>
+  <b>→</b>
+  <span>ANALYZE</span>
+  <b>→</b>
+  <span>VALIDATE</span>
+  <b>→</b>
+  <span>EXPLAIN</span>
+</div>
+        
 <div class="grid-3">
 
   <article class="card card-pad capability reveal">
