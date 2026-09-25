@@ -161,12 +161,16 @@
     .evidence-line span{display:inline-flex;align-items:center;gap:8px}
     .dot{width:4px;height:4px;background:#9aa7b9;border-radius:50%}
 
-    .portrait-wrap{position:relative;max-width:470px;margin-left:auto}
+    .portrait-wrap{
+  position:relative;
+  max-width:470px;
+  margin-left:auto;
+}
 
-    @media (min-width:761px){
+@media (min-width:761px){
   .portrait-wrap{
-    align-self:start;
-    margin-top:48px;
+    align-self:center;
+    margin-top:0;
   }
 }
     .portrait-card{
@@ -478,7 +482,7 @@
     @keyframes heroIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
 
     @media (max-width:900px){
-      .hero-grid,.practice-grid,.about-grid{grid-template-columns:1fr}
+  .practice-grid,.about-grid{grid-template-columns:1fr}
       .portrait-wrap{margin:0 auto}
       .float-card{right:-8px}
       .grid-3{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -558,87 +562,120 @@
 
 <main id="main">
   <section class="hero" id="home">
-    <div class="container">
-      <div class="hero-grid">
-        <div class="hero-copy">
+  <div class="container">
 
-<p class="eyebrow">DATA • ANALYTICS • PROBLEM SOLVING</p>
+    <div class="hero-grid">
 
-<h1>Hi, I’m Saideep<br>Pallela.</h1>
+      <!-- LEFT COLUMN -->
+      <div class="hero-copy">
 
-<p class="hero-lead">
-  I solve business problems with data, turning complex questions into clear insights and practical solutions.
-</p>
+        <p class="eyebrow">DATA • ANALYTICS • PROBLEM SOLVING</p>
 
-<div class="tool-strip" aria-label="Core technologies">
+        <h1>Hi, I’m Saideep<br>Pallela.</h1>
 
-  <div class="tool">
-    <img class="logo" src="assets/icons/sql-server.png" alt="Microsoft SQL Server logo">
-    <span>Microsoft SQL Server</span>
+        <p class="hero-lead">
+          I solve business problems with data, turning complex questions into clear insights and practical solutions.
+        </p>
+
+        <!-- TOOLS I WORK WITH -->
+        <div class="hero-subsection">
+
+          <p class="hero-section-title">TOOLS I WORK WITH</p>
+
+          <div class="tool-strip" aria-label="Tools I work with">
+
+            <div class="tool">
+              <img class="logo" src="assets/icons/sql-server.png" alt="Microsoft SQL Server logo">
+              <span>Microsoft SQL Server</span>
+            </div>
+
+            <div class="tool">
+              <img class="logo" src="assets/icons/postgresql.png" alt="PostgreSQL logo">
+              <span>PostgreSQL</span>
+            </div>
+
+            <div class="tool">
+              <img class="logo" src="assets/icons/excel.png" alt="Microsoft Excel logo">
+              <span>Microsoft Excel</span>
+            </div>
+
+            <div class="tool">
+              <img class="logo" src="assets/icons/python.png" alt="Python logo">
+              <span>Python</span>
+            </div>
+
+            <div class="tool">
+              <img class="logo" src="assets/icons/powerbi.png" alt="Microsoft Power BI logo">
+              <span>Power BI</span>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- LET'S CONNECT -->
+        <div class="hero-subsection hero-connect">
+
+          <p class="hero-section-title">LET’S CONNECT</p>
+
+          <div class="hero-actions">
+
+            <a class="btn btn-light"
+               href="https://www.linkedin.com/in/saideeppallela/"
+               target="_blank"
+               rel="noopener noreferrer">
+              <img src="assets/icons/linkedin.png" alt="" class="cta-logo">
+              View LinkedIn Profile ↗
+            </a>
+
+            <a class="btn btn-light"
+               href="https://github.com/saideppallela"
+               target="_blank"
+               rel="noopener noreferrer">
+              <img src="assets/icons/github.png" alt="" class="cta-logo">
+              Explore My GitHub ↗
+            </a>
+
+            <a class="btn btn-light"
+               href="mailto:saideeppallela@gmail.com">
+              <img src="assets/icons/gmail.png" alt="" class="cta-logo">
+              Discuss an Opportunity ↗
+            </a>
+
+          </div>
+        </div>
+
+      
+
+      <!-- RIGHT COLUMN -->
+      <div class="portrait-wrap">
+
+        <div class="portrait-card">
+          <img
+            src="assets/images/saideep-profile.png"
+            alt="Saideep Pallela, Data & Analytics Professional"
+            fetchpriority="high">
+        </div>
+
+        <div class="portrait-actions">
+
+          <a class="btn btn-primary"
+             href="mailto:saideeppallela@gmail.com">
+            Let’s Work Together →
+          </a>
+
+          <a class="btn btn-light"
+             href="assets/documents/saideep-pallela-cv.pdf"
+             download>
+            View My Resume ↓
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
   </div>
-
-  <div class="tool">
-    <img class="logo" src="assets/icons/postgresql.png" alt="PostgreSQL logo">
-    <span>PostgreSQL</span>
-  </div>
-
-  <div class="tool">
-    <img class="logo" src="assets/icons/excel.png" alt="Microsoft Excel logo">
-    <span>Microsoft Excel</span>
-  </div>
-
-  <div class="tool">
-    <img class="logo" src="assets/icons/python.png" alt="Python logo">
-    <span>Python</span>
-  </div>
-
-  <div class="tool">
-    <img class="logo" src="assets/icons/powerbi.png" alt="Microsoft Power BI logo">
-    <span>Power BI</span>
-  </div>
-
-</div>
-
-<div class="hero-actions">
-
-  <a class="btn btn-light" href="https://www.linkedin.com/in/saideeppallela/" target="_blank" rel="noopener noreferrer">
-    <img src="assets/icons/linkedin.png" alt="" class="cta-logo">
-    Connect on LinkedIn
-  </a>
-
-  <a class="btn btn-light" href="https://github.com/saideppallela" target="_blank" rel="noopener noreferrer">
-    <img src="assets/icons/github.png" alt="" class="cta-logo">
-    Explore My GitHub
-  </a>
-
-  <a class="btn btn-light" href="mailto:saideeppallela@gmail.com">
-    <img src="assets/icons/gmail.png" alt="" class="cta-logo">
-    Discuss a Role
-  </a>
-
-</div>
-          
-<div class="portrait-wrap">
-
-  <div class="portrait-card">
-    <img src="assets/images/saideep-profile.png" alt="Saideep Pallela, Data & Analytics Professional" fetchpriority="high">
-  </div>
-
-  <div class="portrait-actions">
-    <a class="btn btn-primary" href="mailto:saideeppallela@gmail.com">
-      Hire Me →
-    </a>
-
-    <a class="btn btn-light" href="assets/documents/saideep-pallela-cv.pdf" download>
-      Download My CV ↓
-    </a>
-  </div>
-
-</div>
-
-</div>
-</div>
-
 </section>
 
   <section class="section" id="capabilities">
@@ -785,21 +822,17 @@
           </a>
         </div>
       </article>
-
-    </div>
-  </div>
-</section>
 <section class="section" id="about">
   <div class="container">
 
     <div class="section-head reveal">
-      <p class="eyebrow">About</p>
+      <p class="eyebrow">ABOUT</p>
       <h2>I turn business questions into practical data solutions.</h2>
     </div>
 
     <div class="about-main">
 
-      <!-- Left: About Content -->
+      <!-- ABOUT CONTENT -->
       <div class="about-content reveal">
 
         <p class="about-lead">
@@ -822,7 +855,7 @@
 
       </div>
 
-      <!-- Right: About Image -->
+      <!-- ABOUT IMAGE -->
       <div class="about-image-wrap reveal">
         <img
           src="assets/images/saideep-about-me.png"
@@ -832,7 +865,7 @@
 
     </div>
 
-    <!-- About Information Strip -->
+    <!-- ABOUT INFORMATION -->
     <div class="about-info-grid">
 
       <div class="about-info-card reveal">
@@ -848,7 +881,7 @@
       </div>
 
       <div class="about-info-card reveal">
-        <p class="about-info-label">HOW I WORK</p>
+        <p class="about-info-label">APPROACH</p>
         <strong>Business Question</strong>
         <span>→ Data → Analysis → Insight</span>
       </div>
@@ -858,11 +891,14 @@
   </div>
 </section>
 
+
+<!-- FINAL CTA -->
 <section class="final">
   <div class="container">
+
     <div class="final-card reveal">
 
-      <p class="eyebrow final-eyebrow">LET'S CONNECT</p>
+      <p class="eyebrow final-eyebrow">LET’S CONNECT</p>
 
       <h2>Have a role or opportunity in mind?</h2>
 
@@ -877,10 +913,11 @@
           Explore My Projects <span aria-hidden="true">→</span>
         </a>
 
-        <a class="btn btn-light"
-           href="https://www.linkedin.com/in/saideppallela/"
-           target="_blank"
-           rel="noopener noreferrer">
+        <a
+          class="btn btn-light"
+          href="https://www.linkedin.com/in/saideeppallela/"
+          target="_blank"
+          rel="noopener noreferrer">
           <img
             src="assets/icons/linkedin.png"
             alt=""
@@ -888,8 +925,9 @@
           Connect on LinkedIn
         </a>
 
-        <a class="btn btn-light"
-           href="mailto:saideeppallela@gmail.com">
+        <a
+          class="btn btn-light"
+          href="mailto:saideeppallela@gmail.com">
           <img
             src="assets/icons/gmail.png"
             alt=""
@@ -900,24 +938,32 @@
       </div>
 
     </div>
+
   </div>
 </section>
+
 </main>
 
+
+<!-- FOOTER -->
 <footer>
   <div class="container">
+
     <div class="footer-row">
 
       <div class="footer-identity">
         <strong>Saideep Pallela</strong>
+
         <div class="footer-note">
           Data • Analytics • Problem Solving
         </div>
       </div>
 
+
       <div class="footer-note footer-tagline">
         Business Problems → Data → Insights → Solutions
       </div>
+
 
       <div class="footer-links">
 
@@ -925,35 +971,44 @@
           href="https://github.com/saideppallela"
           target="_blank"
           rel="noopener noreferrer">
+
           <img
             src="assets/icons/github.png"
             alt=""
             class="footer-logo">
+
           GitHub
         </a>
 
+
         <a
-          href="https://www.linkedin.com/in/saideppallela/"
+          href="https://www.linkedin.com/in/saideeppallela/"
           target="_blank"
           rel="noopener noreferrer">
+
           <img
             src="assets/icons/linkedin.png"
             alt=""
             class="footer-logo">
+
           LinkedIn
         </a>
 
+
         <a href="mailto:saideeppallela@gmail.com">
+
           <img
             src="assets/icons/gmail.png"
             alt=""
             class="footer-logo">
+
           Email
         </a>
 
       </div>
 
     </div>
+
   </div>
 </footer>
 
