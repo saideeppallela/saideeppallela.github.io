@@ -1690,10 +1690,13 @@
         font-size:1rem;
       }
 
-      .grid-2,
-      .grid-3{
-        grid-template-columns:1fr;
-      }
+     .grid-2{
+  grid-template-columns:1fr;
+}
+
+.grid-3{
+  grid-template-columns:repeat(3,minmax(0,1fr));
+}
 
       .card-pad{
         padding:25px;
