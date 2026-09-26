@@ -1864,7 +1864,7 @@
 
 <div class="problem-lab-pipeline" aria-label="Six stage data problem-solving pipeline">
 
-  <div class="lab-stage active">
+  <div class="lab-stage active" data-stage="define">
     <span class="stage-icon">🎯</span>
     <span class="stage-number">01</span>
     <strong>DEFINE</strong>
@@ -1873,7 +1873,7 @@
 
   <span class="stage-arrow" aria-hidden="true">→</span>
 
-  <div class="lab-stage">
+  <div class="lab-stage" data-stage="query">
     <span class="stage-icon">🔎</span>
     <span class="stage-number">02</span>
     <strong>QUERY</strong>
@@ -1882,7 +1882,7 @@
 
   <span class="stage-arrow" aria-hidden="true">→</span>
 
-  <div class="lab-stage">
+  <div class="lab-stage" data-stage="transform">
     <span class="stage-icon">🧹</span>
     <span class="stage-number">03</span>
     <strong>TRANSFORM</strong>
@@ -1891,7 +1891,7 @@
 
   <span class="stage-arrow" aria-hidden="true">→</span>
 
-  <div class="lab-stage">
+  <div class="lab-stage" data-stage="analyze">
     <span class="stage-icon">📊</span>
     <span class="stage-number">04</span>
     <strong>ANALYZE</strong>
@@ -1900,7 +1900,7 @@
 
   <span class="stage-arrow" aria-hidden="true">→</span>
 
-  <div class="lab-stage">
+  <div class="lab-stage" data-stage="validate">
     <span class="stage-icon">✓</span>
     <span class="stage-number">05</span>
     <strong>VALIDATE</strong>
@@ -1909,7 +1909,7 @@
 
   <span class="stage-arrow" aria-hidden="true">→</span>
 
-  <div class="lab-stage">
+  <div class="lab-stage" data-stage="explain">
     <span class="stage-icon">💡</span>
     <span class="stage-number">06</span>
     <strong>EXPLAIN</strong>
@@ -2267,6 +2267,15 @@
     }else{
       items.forEach(item => item.classList.add('visible'));
     }
+const labStages = document.querySelectorAll('.lab-stage');
+
+labStages.forEach(stage => {
+  stage.addEventListener('mouseenter', () => {
+    labStages.forEach(item => item.classList.remove('active'));
+    stage.classList.add('active');
+  });
+});
+    
   </script>
 </body>
 </html>
