@@ -977,20 +977,22 @@
 .capability-cta{
   display:inline-flex;
   align-items:center;
-  min-height:34px;
-  padding:8px 12px;
-  border:1px solid rgba(109,74,255,.12);
-  border-radius:10px;
-  background:var(--violet-soft);
+  min-height:38px;
+  padding:9px 14px;
+  border:1px solid rgba(109,74,255,.20);
+  border-radius:11px;
+  background:#f4f0ff;
   color:var(--violet);
-  font-size:.72rem;
+  font-size:.74rem;
   font-weight:950;
-  letter-spacing:.03em;
+  letter-spacing:.025em;
+  box-shadow:0 3px 10px rgba(109,74,255,.05);
   transition:
     color .25s ease,
     background .25s ease,
     border-color .25s ease,
-    transform .25s ease;
+    transform .25s ease,
+    box-shadow .25s ease;
 }
 
 .capability-arrow{
@@ -1011,11 +1013,11 @@
 }
 
 .capability:hover .capability-cta{
-  background:#f0ebff;
-  border-color:rgba(109,74,255,.28);
+  background:#e9e2ff;
+  border-color:rgba(109,74,255,.32);
   color:var(--violet);
-  transform:translateY(-1px);
-  box-shadow:0 5px 14px rgba(109,74,255,.10);
+  transform:translateY(-2px);
+  box-shadow:0 7px 18px rgba(109,74,255,.12);
 }
 
 .capability:hover .capability-arrow{
