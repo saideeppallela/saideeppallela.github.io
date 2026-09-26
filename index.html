@@ -871,18 +871,18 @@
   content:"";
   position:absolute;
   top:0;
-  left:-14px;
-  width:14px;
-  height:2px;
+  left:-30px;
+  width:30px;
+  height:3px;
   border-radius:999px;
   background:linear-gradient(
     90deg,
     transparent,
-    rgba(244,200,75,.9),
-    rgba(109,74,255,.85),
+    var(--yellow),
+    var(--violet),
     transparent
   );
-  box-shadow:0 0 7px rgba(109,74,255,.22);
+  box-shadow:0 0 10px rgba(109,74,255,.28);
   opacity:0;
   z-index:4;
   pointer-events:none;
@@ -890,18 +890,23 @@
 }
 
 @keyframes capabilitySnake{
-  0%,4%{
-    transform:translateX(0);
+  0%{
+    left:-30px;
     opacity:0;
   }
 
-  5%,11%{
-    transform:translateX(0);
-    opacity:.75;
+  3%{
+    left:-10px;
+    opacity:.9;
   }
 
-  12%,100%{
-    transform:translateX(calc(100% + 14px));
+  12%{
+    left:100%;
+    opacity:0;
+  }
+
+  100%{
+    left:100%;
     opacity:0;
   }
 }
@@ -918,16 +923,16 @@
   animation-delay:4s;
 }
 
-.capability:nth-child(4)::before{
-  animation-delay:10s;
+.capability:nth-child(6)::before{
+  animation-delay:6s;
 }
 
 .capability:nth-child(5)::before{
   animation-delay:8s;
 }
 
-.capability:nth-child(6)::before{
-  animation-delay:6s;
+.capability:nth-child(4)::before{
+  animation-delay:10s;
 }
     
 /* ---------- CAPABILITY EMOJI MOTION ---------- */
