@@ -965,6 +965,16 @@
   transform:scale(1.25);
 }
 
+    /* ---------- ACTIVE CAPABILITY ---------- */
+
+.capability.focused{
+  border-color:rgba(109,74,255,.42);
+  box-shadow:
+    0 0 0 4px rgba(109,74,255,.07),
+    0 14px 30px rgba(109,74,255,.12);
+  transform:translateY(-4px);
+}
+
 .number{
   color:#aaa2bb;
   font-size:.7rem;
@@ -2451,15 +2461,21 @@ labStages.forEach(stage => {
     labStages.forEach(stage => {
   stage.addEventListener('click', () => {
     if(stage.dataset.stage === 'define'){
-      const targetCard = document.querySelector('.capability');
+  const targetCard = document.querySelector('.capability');
 
-      if(targetCard){
-        targetCard.scrollIntoView({
-          behavior:'smooth',
-          block:'center'
-        });
-      }
-    }
+  if(targetCard){
+    document.querySelectorAll('.capability').forEach(card => {
+      card.classList.remove('focused');
+    });
+
+    targetCard.classList.add('focused');
+
+    targetCard.scrollIntoView({
+      behavior:'smooth',
+      block:'center'
+    });
+  }
+}
   });
 });
     
