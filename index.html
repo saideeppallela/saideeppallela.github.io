@@ -871,21 +871,18 @@
   content:"";
   position:absolute;
   top:0;
-  left:-12px;
-  width:12px;
-  height:3px;
+  left:-14px;
+  width:14px;
+  height:2px;
   border-radius:999px;
   background:linear-gradient(
     90deg,
     transparent,
-    var(--yellow),
-    #fff,
-    var(--violet),
+    rgba(244,200,75,.9),
+    rgba(109,74,255,.85),
     transparent
   );
-  box-shadow:
-    0 0 8px rgba(244,200,75,.65),
-    0 0 16px rgba(109,74,255,.35);
+  box-shadow:0 0 7px rgba(109,74,255,.22);
   opacity:0;
   z-index:4;
   pointer-events:none;
@@ -893,18 +890,18 @@
 }
 
 @keyframes capabilitySnake{
-  0%,2%{
+  0%,4%{
     transform:translateX(0);
     opacity:0;
   }
 
-  4%,12%{
+  5%,11%{
     transform:translateX(0);
-    opacity:1;
+    opacity:.75;
   }
 
-  14%,100%{
-    transform:translateX(calc(100% + 12px));
+  12%,100%{
+    transform:translateX(calc(100% + 14px));
     opacity:0;
   }
 }
