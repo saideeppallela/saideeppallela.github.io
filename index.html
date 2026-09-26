@@ -2099,7 +2099,7 @@
     </div>
   </article>
 
-  <article class="card card-pad capability reveal">
+  <article class="card card-pad capability reveal" data-capability="query">
     <div>
       <span class="mini">🔎 02 · QUERY</span>
       <h3>SQL & Data Analysis</h3>
@@ -2112,7 +2112,7 @@
     </a>
   </article>
 
-  <article class="card card-pad capability reveal">
+  <article class="card card-pad capability reveal" data-capability="transform">
     <div>
       <span class="mini">🧹 03 · TRANSFORM</span>
       <h3>Python & Data Transformation</h3>
@@ -2125,7 +2125,7 @@
     </a>
   </article>
 
-  <article class="card card-pad capability reveal">
+  <article class="card card-pad capability reveal" data-capability="analyze">
     <div>
       <span class="mini">📊 04 · ANALYZE</span>
       <h3>BI, Excel & Reporting</h3>
@@ -2459,27 +2459,79 @@ labStages.forEach(stage => {
   });
 });
 
-    labStages.forEach(stage => {
+  labStages.forEach(stage => {
   stage.addEventListener('click', () => {
+
     if(stage.dataset.stage === 'define'){
-  const targetCard = document.querySelector('.capability');
+      const targetCard = document.querySelector('.capability');
 
-  if(targetCard){
-    document.querySelectorAll('.capability').forEach(card => {
-      card.classList.remove('focused');
-    });
+      if(targetCard){
+        document.querySelectorAll('.capability').forEach(card => {
+          card.classList.remove('focused');
+        });
 
-    targetCard.classList.add('focused');
+        targetCard.classList.add('focused');
 
-    targetCard.scrollIntoView({
-      behavior:'smooth',
-      block:'center'
-    });
-  }
-}
-  });
+        targetCard.scrollIntoView({
+          behavior:'smooth',
+          block:'center'
+        });
+      }
+    }
+
+    if(stage.dataset.stage === 'query'){
+      const targetCard = document.querySelector('[data-capability="query"]');
+
+      if(targetCard){
+        document.querySelectorAll('.capability').forEach(card => {
+          card.classList.remove('focused');
+        });
+
+        targetCard.classList.add('focused');
+
+        targetCard.scrollIntoView({
+          behavior:'smooth',
+          block:'center'
+        });
+      }
+    }
+
+    if(stage.dataset.stage === 'transform'){
+      const targetCard = document.querySelector('[data-capability="transform"]');
+
+      if(targetCard){
+        document.querySelectorAll('.capability').forEach(card => {
+          card.classList.remove('focused');
+        });
+
+        targetCard.classList.add('focused');
+
+        targetCard.scrollIntoView({
+          behavior:'smooth',
+          block:'center'
+        });
+      }
+    }
+
+    if(stage.dataset.stage === 'analyze'){
+      const targetCard = document.querySelector('[data-capability="analyze"]');
+
+      if(targetCard){
+        document.querySelectorAll('.capability').forEach(card => {
+          card.classList.remove('focused');
+        });
+
+        targetCard.classList.add('focused');
+
+        targetCard.scrollIntoView({
+          behavior:'smooth',
+          block:'center'
+        });
+      }
+    }
+
+   });
 });
-    
-  </script>
+</script>
 </body>
 </html>
