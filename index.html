@@ -2138,7 +2138,7 @@
     </a>
   </article>
 
-  <article class="card card-pad capability reveal">
+  <article class="card card-pad capability reveal" data-capability="validate">
     <div>
       <span class="mini">✓ 05 · VALIDATE</span>
       <h3>Data Quality & Operations</h3>
@@ -2146,7 +2146,7 @@
     </div>
   </article>
 
-  <article class="card card-pad capability reveal">
+  <article class="card card-pad capability reveal" data-capability="explain">
     <div>
       <span class="mini">💡 06 · EXPLAIN</span>
       <h3>Business Insights & Problem Solving</h3>
@@ -2529,6 +2529,40 @@ labStages.forEach(stage => {
         });
       }
     }
+
+    if(stage.dataset.stage === 'validate'){
+  const targetCard = document.querySelector('[data-capability="validate"]');
+
+  if(targetCard){
+    document.querySelectorAll('.capability').forEach(card => {
+      card.classList.remove('focused');
+    });
+
+    targetCard.classList.add('focused');
+
+    targetCard.scrollIntoView({
+      behavior:'smooth',
+      block:'center'
+    });
+  }
+}
+
+    if(stage.dataset.stage === 'explain'){
+  const targetCard = document.querySelector('[data-capability="explain"]');
+
+  if(targetCard){
+    document.querySelectorAll('.capability').forEach(card => {
+      card.classList.remove('focused');
+    });
+
+    targetCard.classList.add('focused');
+
+    targetCard.scrollIntoView({
+      behavior:'smooth',
+      block:'center'
+    });
+  }
+}
 
    });
 });
