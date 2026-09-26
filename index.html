@@ -572,62 +572,115 @@
   margin-top:18px;
   flex-wrap:wrap;
 }
+/* ---------- CARDS ---------- */
 
-   /* ---------- CARDS ---------- */
-
-.workflow-rail{
+.problem-lab{
   position:relative;
   overflow:hidden;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:12px;
   margin:0 0 28px;
-  padding:14px 18px;
-  border:1px solid var(--line);
-  border-radius:18px;
-  background:rgba(255,255,255,.72);
-  box-shadow:0 8px 24px rgba(34,25,72,.04);
-  color:var(--violet);
-  font-size:.68rem;
-  font-weight:950;
-  letter-spacing:.12em;
+  padding:22px;
+  border:1px solid rgba(109,74,255,.18);
+  border-radius:22px;
+  background:
+    radial-gradient(circle at 92% 15%,rgba(244,200,75,.16),transparent 25%),
+    linear-gradient(135deg,#fff 0%,#f7f3ff 100%);
+  box-shadow:0 12px 32px rgba(34,25,72,.06);
 }
 
-.workflow-rail span{
-  transition:transform .25s ease,color .25s ease;
-}
-
-.workflow-rail b{
-  color:var(--yellow);
-  font-size:.95rem;
-  transition:transform .25s ease;
-}
-  .workflow-rail:after{
+.problem-lab:before{
   content:"";
   position:absolute;
-  left:-25%;
-  bottom:0;
-  width:25%;
-  height:2px;
-  border-radius:99px;
-  background:linear-gradient(
-    90deg,
-    transparent,
-    var(--violet),
-    var(--yellow),
-    transparent
-  );
-  animation:dataPulse 3.8s ease-in-out infinite;
+  width:180px;
+  height:180px;
+  right:-90px;
+  top:-90px;
+  border-radius:50%;
+  border:1px solid rgba(109,74,255,.12);
+  box-shadow:
+    0 0 0 18px rgba(109,74,255,.025),
+    0 0 0 38px rgba(244,200,75,.025);
 }
 
-@keyframes dataPulse{
-  0%{
-    left:-25%;
-  }
-  100%{
-    left:100%;
-  }
+.problem-lab-top{
+  position:relative;
+  z-index:1;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  margin-bottom:18px;
+}
+
+.lab-title{
+  color:var(--ink);
+  font-size:.72rem;
+  font-weight:950;
+  letter-spacing:.14em;
+}
+
+.lab-status{
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+  padding:6px 10px;
+  border-radius:999px;
+  background:#fff;
+  border:1px solid var(--line);
+  color:var(--muted);
+  font-size:.62rem;
+  font-weight:900;
+  letter-spacing:.1em;
+}
+
+.lab-status i{
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  background:var(--yellow);
+  box-shadow:0 0 0 4px rgba(244,200,75,.16);
+}
+
+.problem-lab-question{
+  position:relative;
+  z-index:1;
+  display:flex;
+  align-items:center;
+  gap:14px;
+  padding:17px 18px;
+  border-radius:16px;
+  background:rgba(255,255,255,.78);
+  border:1px solid rgba(109,74,255,.12);
+}
+
+.question-icon{
+  width:40px;
+  height:40px;
+  display:grid;
+  place-items:center;
+  flex:0 0 40px;
+  border-radius:13px;
+  background:var(--violet);
+  color:#fff;
+  font-size:1.05rem;
+  box-shadow:5px 5px 0 var(--yellow);
+}
+
+.question-label{
+  display:block;
+  margin-bottom:4px;
+  color:var(--violet);
+  font-size:.62rem;
+  font-weight:950;
+  letter-spacing:.13em;
+  text-transform:uppercase;
+}
+
+.problem-lab-question strong{
+  display:block;
+  color:var(--ink);
+  font-size:1rem;
+  line-height:1.35;
+  letter-spacing:-.02em;
 }
 
 .grid-2{
@@ -715,7 +768,8 @@
   border-radius:8px;
   background:var(--violet-soft);
 }
-    /* ---------- PROJECTS ---------- */
+
+/* ---------- PROJECTS ---------- */
 
     .project-card{
       overflow:hidden;
@@ -1648,20 +1702,83 @@
           <h2>I turn data problems into practical solutions.</h2>
           <p>I follow a practical workflow: define the question, query and transform the data, analyze and validate the result, then explain what it means.</p>
         </div>
-<div class="workflow-rail" aria-label="Data problem-solving workflow">
-  <span>DEFINE</span>
-  <b>→</b>
-  <span>QUERY</span>
-  <b>→</b>
-  <span>TRANSFORM</span>
-  <b>→</b>
-  <span>ANALYZE</span>
-  <b>→</b>
-  <span>VALIDATE</span>
-  <b>→</b>
-  <span>EXPLAIN</span>
-</div>
         
+<div class="problem-lab" aria-label="Saideep data problem-solving system">
+
+  <div class="problem-lab-top">
+    <span class="lab-title">🧠 DATA PROBLEM LAB</span>
+    <span class="lab-status">
+      <i aria-hidden="true"></i>
+      SYSTEM READY
+    </span>
+  </div>
+  
+<div class="problem-lab-question">
+  <span class="question-icon" aria-hidden="true">❓</span>
+  <div>
+    <span class="question-label">START WITH THE QUESTION</span>
+    <strong>What are we actually trying to solve?</strong>
+  </div>
+</div>
+
+<div class="problem-lab-pipeline" aria-label="Six stage data problem-solving pipeline">
+
+  <div class="lab-stage active">
+    <span class="stage-icon">🎯</span>
+    <span class="stage-number">01</span>
+    <strong>DEFINE</strong>
+    <small>Frame the problem</small>
+  </div>
+
+  <span class="stage-arrow" aria-hidden="true">→</span>
+
+  <div class="lab-stage">
+    <span class="stage-icon">🔎</span>
+    <span class="stage-number">02</span>
+    <strong>QUERY</strong>
+    <small>Find the data</small>
+  </div>
+
+  <span class="stage-arrow" aria-hidden="true">→</span>
+
+  <div class="lab-stage">
+    <span class="stage-icon">🧹</span>
+    <span class="stage-number">03</span>
+    <strong>TRANSFORM</strong>
+    <small>Prepare the data</small>
+  </div>
+
+  <span class="stage-arrow" aria-hidden="true">→</span>
+
+  <div class="lab-stage">
+    <span class="stage-icon">📊</span>
+    <span class="stage-number">04</span>
+    <strong>ANALYZE</strong>
+    <small>Find the pattern</small>
+  </div>
+
+  <span class="stage-arrow" aria-hidden="true">→</span>
+
+  <div class="lab-stage">
+    <span class="stage-icon">✓</span>
+    <span class="stage-number">05</span>
+    <strong>VALIDATE</strong>
+    <small>Check the result</small>
+  </div>
+
+  <span class="stage-arrow" aria-hidden="true">→</span>
+
+  <div class="lab-stage">
+    <span class="stage-icon">💡</span>
+    <span class="stage-number">06</span>
+    <strong>EXPLAIN</strong>
+    <small>Share the insight</small>
+  </div>
+
+</div>
+
+</div>
+
 <div class="grid-3">
 
   <article class="card card-pad capability reveal">
