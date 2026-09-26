@@ -862,8 +862,59 @@
   justify-content:space-between;
   position:relative;
   overflow:hidden;
+  isolation:isolate;
 }
 
+.capability::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:-35%;
+  width:35%;
+  height:3px;
+  border-radius:999px;
+  background:linear-gradient(
+    90deg,
+    transparent,
+    var(--violet),
+    var(--yellow),
+    transparent
+  );
+  opacity:0;
+  z-index:3;
+  pointer-events:none;
+  animation:capabilityLight 12s linear infinite;
+}
+
+@keyframes capabilityLight{
+  0%,12%{
+    left:-35%;
+    opacity:0;
+  }
+
+  14%,18%{
+    left:0%;
+    opacity:1;
+  }
+
+  20%,100%{
+    left:100%;
+    opacity:0;
+  }
+}
+
+/* ---------- CAPABILITY EMOJI MOTION ---------- */
+
+.capability .mini{
+  position:relative;
+  z-index:2;
+  transition:transform .25s ease, filter .25s ease;
+}
+
+.capability:hover .mini{
+  transform:translateY(-1px);
+}
+    
 .capability:after{
   content:"";
   position:absolute;
@@ -924,22 +975,34 @@
 }
 
 .capability-cta{
+  display:inline-flex;
+  align-items:center;
+  min-height:34px;
+  padding:8px 12px;
+  border:1px solid rgba(109,74,255,.12);
+  border-radius:10px;
+  background:var(--violet-soft);
   color:var(--violet);
-  font-size:.68rem;
+  font-size:.72rem;
   font-weight:950;
-  letter-spacing:.05em;
-  transition:color .25s ease;
+  letter-spacing:.03em;
+  transition:
+    color .25s ease,
+    background .25s ease,
+    border-color .25s ease,
+    transform .25s ease;
 }
 
 .capability-arrow{
   display:grid;
   place-items:center;
-  width:28px;
-  height:28px;
-  border-radius:50%;
+  width:34px;
+  height:34px;
+  border-radius:10px;
   background:var(--violet-soft);
+  border:1px solid rgba(109,74,255,.12);
   color:var(--violet);
-  font-size:.9rem;
+  font-size:1rem;
   font-weight:950;
   transition:
     transform .25s ease,
@@ -947,9 +1010,17 @@
     color .25s ease;
 }
 
+.capability:hover .capability-cta{
+  background:var(--violet);
+  border-color:var(--violet);
+  color:#fff;
+  transform:translateY(-1px);
+}
+
 .capability:hover .capability-arrow{
   transform:translateX(4px);
   background:var(--violet);
+  border-color:var(--violet);
   color:#fff;
 }
 
@@ -1970,81 +2041,64 @@
 
 <article class="card card-pad capability reveal">
   <div>
-    <span class="mini">01 · DEFINE</span>
+    <span class="mini">🎯 01 · DEFINE</span>
     <h3>Frame the Business Problem</h3>
     <p>Start with the business question, identify what needs to be measured and define a clear direction for the analysis.</p>
   </div>
 
-  <div class="capability-footer">
-    <span class="capability-cta">Explore Work</span>
-    <span class="capability-arrow" aria-hidden="true">→</span>
-  </div>
-</article>
 
   <article class="card card-pad capability reveal">
   <div>
-    <span class="mini">02 · QUERY</span>
+    <span class="mini">🔎 02 · QUERY</span>
     <h3>SQL & Data Analysis</h3>
     <p>Extract, join, filter and aggregate data with SQL Server and PostgreSQL to investigate practical business questions.</p>
   </div>
 
-  <div class="capability-footer">
-    <span class="capability-cta">Explore SQL Work</span>
-    <span class="capability-arrow" aria-hidden="true">→</span>
-  </div>
+  <a class="capability-footer" href="https://github.com/saideppallela/Explore-My-Microsoft-SQL-Server-Projects" target="_blank" rel="noopener noreferrer">
+  <span class="capability-cta">◉ GitHub · View SQL Work</span>
+  <span class="capability-arrow" aria-hidden="true">→</span>
+</a>
 </article>
 
   <article class="card card-pad capability reveal">
   <div>
-    <span class="mini">03 · TRANSFORM</span>
+    <span class="mini">🧹 03 · TRANSFORM</span>
     <h3>Python & Data Transformation</h3>
     <p>Clean, transform and prepare data with Python to make it ready for analysis and repeatable workflows.</p>
   </div>
 
-  <div class="capability-footer">
-    <span class="capability-cta">Explore Python Work</span>
-    <span class="capability-arrow" aria-hidden="true">→</span>
-  </div>
+ <a class="capability-footer" href="https://github.com/saideeppallela/data-practice-journal/tree/main/05_python" target="_blank" rel="noopener noreferrer">
+  <span class="capability-cta">◉ GitHub · View Python Work</span>
+  <span class="capability-arrow" aria-hidden="true">→</span>
+ </a>
 </article>
 
   <article class="card card-pad capability reveal">
   <div>
-    <span class="mini">04 · ANALYZE</span>
+    <span class="mini">📊 04 · ANALYZE</span>
     <h3>BI, Excel & Reporting</h3>
     <p>Turn prepared data into KPI-focused reports, dashboards and analysis using Power BI and Excel.</p>
   </div>
 
-  <div class="capability-footer">
-    <span class="capability-cta">Explore BI & Excel</span>
-    <span class="capability-arrow" aria-hidden="true">→</span>
-  </div>
+  <a class="capability-footer" href="https://github.com/saideeppallela/Explore-My-Microsoft-Excel-Projects" target="_blank" rel="noopener noreferrer">
+  <span class="capability-cta">◉ GitHub · View Excel Work</span>
+  <span class="capability-arrow" aria-hidden="true">→</span>
+</a>
 </article>
 
 <article class="card card-pad capability reveal">
   <div>
-    <span class="mini">05 · VALIDATE</span>
+    <span class="mini">✓ 05 · VALIDATE</span>
     <h3>Data Quality & Operations</h3>
     <p>Check completeness, duplicates, consistency, reconciliation and exceptions before relying on the results.</p>
   </div>
 
-  <div class="capability-footer">
-    <span class="capability-cta">Explore Data Quality</span>
-    <span class="capability-arrow" aria-hidden="true">→</span>
-  </div>
-</article>
-
 <article class="card card-pad capability reveal">
   <div>
-    <span class="mini">06 · EXPLAIN</span>
+    <span class="mini">💡 06 · EXPLAIN</span>
     <h3>Business Insights & Problem Solving</h3>
     <p>Connect the findings back to the original question and communicate practical insights that are easy to understand.</p>
   </div>
-
-  <div class="capability-footer">
-    <span class="capability-cta">Explore Insights</span>
-    <span class="capability-arrow" aria-hidden="true">→</span>
-  </div>
-</article>
 
 </div>
       </div>
