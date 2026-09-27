@@ -337,12 +337,16 @@
       pointer-events:none;
     }
 
-    .hero-grid{
-      display:grid;
-      grid-template-columns:minmax(0,1.08fr) minmax(350px,.92fr);
-      align-items:center;
-      gap:72px;
-    }
+ .hero-grid{
+  display:grid;
+  grid-template-columns:minmax(0,1.08fr) minmax(350px,.92fr);
+  grid-template-areas:
+    "copy portrait"
+    "tools actions"
+    "connect .";
+  align-items:center;
+  gap:72px;
+}
 
     .hero-copy{
       animation:heroIn .8s ease both;
@@ -1929,107 +1933,105 @@
   <main id="main">
 
     <!-- HERO -->
-    <section class="hero" id="home">
-      <div class="container">
-        <div class="hero-grid">
+<section class="hero" id="home">
+  <div class="container">
+    <div class="hero-grid">
 
-          <div class="hero-copy">
-            <p class="eyebrow">DATA • ANALYTICS • PROBLEM SOLVING</p>
+      <div class="hero-copy">
+        <p class="eyebrow">DATA • ANALYTICS • PROBLEM SOLVING</p>
 
-            <h1>
-              Hi, I’m Saideep<br>
-              <span class="accent">Pallela.</span>
-            </h1>
+        <h1>
+          Hi, I’m Saideep<br>
+          <span class="accent">Pallela.</span>
+        </h1>
 
-            <p class="hero-lead">
-              I solve business problems with data, turning complex questions into clear insights and practical solutions.
-            </p>
+        <p class="hero-lead">
+          I solve business problems with data, turning complex questions into clear insights and practical solutions.
+        </p>
 
-            <div class="hero-subsection">
-              <p class="hero-section-title">TOOLS I WORK WITH <span aria-hidden="true">↓</span></p>
+        <div class="hero-subsection">
+          <p class="hero-section-title">LET’S CONNECT <span aria-hidden="true">↓</span></p>
 
-              <div class="tool-strip" aria-label="Tools I work with">
-                <div class="tool">
-                  <img class="logo" src="assets/icons/sql-server.png" alt="Microsoft SQL Server logo">
-                  <span>SQL Server</span>
-                </div>
+          <div class="hero-actions">
+            <a class="btn btn-light" href="https://www.linkedin.com/in/saideeppallela/" target="_blank" rel="noopener noreferrer">
+              <img src="assets/icons/linkedin.png" alt="" class="cta-logo">
+              View LinkedIn Profile ↗
+            </a>
 
-                <div class="tool">
-                  <img class="logo" src="assets/icons/postgresql.png" alt="PostgreSQL logo">
-                  <span>PostgreSQL</span>
-                </div>
+            <a class="btn btn-light" href="https://github.com/saideppallela" target="_blank" rel="noopener noreferrer">
+              <img src="assets/icons/github.png" alt="" class="cta-logo">
+              Explore My GitHub ↗
+            </a>
 
-                <div class="tool">
-                  <img class="logo" src="assets/icons/excel.png" alt="Microsoft Excel logo">
-                  <span>Excel</span>
-                </div>
-
-                <div class="tool">
-                  <img class="logo" src="assets/icons/python.png" alt="Python logo">
-                  <span>Python</span>
-                </div>
-
-                <div class="tool">
-                  <img class="logo" src="assets/icons/powerbi.png" alt="Microsoft Power BI logo">
-                  <span>Power BI</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="hero-subsection">
-              <p class="hero-section-title">LET’S CONNECT <span aria-hidden="true">↓</span></p>
-
-              <div class="hero-actions">
-                <a class="btn btn-light" href="https://www.linkedin.com/in/saideeppallela/" target="_blank" rel="noopener noreferrer">
-                  <img src="assets/icons/linkedin.png" alt="" class="cta-logo">
-                  View LinkedIn Profile ↗
-                </a>
-
-                <a class="btn btn-light" href="https://github.com/saideppallela" target="_blank" rel="noopener noreferrer">
-                  <img src="assets/icons/github.png" alt="" class="cta-logo">
-                  Explore My GitHub ↗
-                </a>
-
-                <a class="btn btn-light" href="mailto:saideeppallela@gmail.com">
-                  <img src="assets/icons/gmail.png" alt="" class="cta-logo">
-                  Discuss an Opportunity ↗
-                </a>
-              </div>
-            </div>
+            <a class="btn btn-light" href="mailto:saideeppallela@gmail.com">
+              <img src="assets/icons/gmail.png" alt="" class="cta-logo">
+              Discuss an Opportunity ↗
+            </a>
           </div>
-
-          <div class="portrait-wrap">
-            <div class="portrait-card">
-              <img
-                src="assets/images/saideep-profile.png"
-                alt="Saideep Pallela, Data & Analytics Professional"
-                fetchpriority="high">
-            </div>
-
-         <div class="portrait-badge">
-  <i aria-hidden="true"></i>
-  Open to Data & Analytics Roles
-</div>
-
-<span class="portrait-think" aria-hidden="true">🤔</span>
-
-<div class="portrait-actions">
-
-            <div class="portrait-actions">
-              <a class="btn btn-primary" href="mailto:saideeppallela@gmail.com">
-                Let’s Work Together →
-              </a>
-
-              <a class="btn btn-light" href="assets/documents/saideep-pallela-cv.pdf" download>
-                View My Resume ↓
-              </a>
-            </div>
-          </div>
-
         </div>
       </div>
-    </section>
 
+      <div class="hero-subsection">
+        <p class="hero-section-title">TOOLS I WORK WITH <span aria-hidden="true">↓</span></p>
+
+        <div class="tool-strip" aria-label="Tools I work with">
+          <div class="tool">
+            <img class="logo" src="assets/icons/sql-server.png" alt="Microsoft SQL Server logo">
+            <span>SQL Server</span>
+          </div>
+
+          <div class="tool">
+            <img class="logo" src="assets/icons/postgresql.png" alt="PostgreSQL logo">
+            <span>PostgreSQL</span>
+          </div>
+
+          <div class="tool">
+            <img class="logo" src="assets/icons/excel.png" alt="Microsoft Excel logo">
+            <span>Excel</span>
+          </div>
+
+          <div class="tool">
+            <img class="logo" src="assets/icons/python.png" alt="Python logo">
+            <span>Python</span>
+          </div>
+
+          <div class="tool">
+            <img class="logo" src="assets/icons/powerbi.png" alt="Microsoft Power BI logo">
+            <span>Power BI</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="portrait-wrap">
+        <div class="portrait-card">
+          <img
+            src="assets/images/saideep-profile.png"
+            alt="Saideep Pallela, Data & Analytics Professional"
+            fetchpriority="high">
+        </div>
+
+        <div class="portrait-badge">
+          <i aria-hidden="true"></i>
+          Open to Data & Analytics Roles
+        </div>
+
+        <span class="portrait-think" aria-hidden="true">🤔</span>
+
+        <div class="portrait-actions">
+          <a class="btn btn-primary" href="mailto:saideeppallela@gmail.com">
+            Let’s Work Together →
+          </a>
+
+          <a class="btn btn-light" href="assets/documents/saideep-pallela-cv.pdf" download>
+            View My Resume ↓
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+    
     <!-- WHAT I WORK ON -->
     <section class="section" id="capabilities">
       <div class="container">
