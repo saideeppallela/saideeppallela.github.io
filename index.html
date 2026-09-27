@@ -342,85 +342,66 @@
 .hero-grid{
   display:grid;
   grid-template-columns:minmax(0,1.08fr) minmax(350px,.92fr);
-  grid-template-areas:
-    "copy portrait"
-    "tools portrait"
-    "connect actions";
   column-gap:72px;
-  row-gap:0;
   align-items:start;
 }
 
-@media (min-width:801px){
-  .hero-grid{
-    grid-template-areas:
-      "copy portrait"
-      "tools actions"
-      "connect .";
-  }
+.hero-left{
+  min-width:0;
 }
 
-/* ---------- HERO GRID AREAS ---------- */
+.hero-side{
+  min-width:0;
+  display:flex;
+  flex-direction:column;
+  align-items:stretch;
+}
 
 .hero-copy{
-  grid-area:copy;
   animation:heroIn .8s ease both;
 }
 
 .hero-tools{
-  grid-area:tools;
-}
-
-.portrait-wrap{
-  grid-area:portrait;
-  align-self:center;
-}
-
-.portrait-actions{
-  grid-area:actions;
+  margin-top:36px;
 }
 
 .hero-connect{
-  grid-area:connect;
+  margin-top:36px;
 }
 
-    .hero h1{
-      margin:0;
-      font-size:clamp(3.6rem,7.2vw,7rem);
-      line-height:.9;
-      letter-spacing:-.078em;
-      max-width:760px;
-    }
+.hero h1{
+  margin:0;
+  font-size:clamp(3.6rem,7.2vw,7rem);
+  line-height:.9;
+  letter-spacing:-.078em;
+  max-width:760px;
+}
 
-    .hero h1 .accent{
-      color:var(--violet);
-      position:relative;
-      display:inline-block;
-    }
+.hero h1 .accent{
+  color:var(--violet);
+  position:relative;
+  display:inline-block;
+}
 
-    .hero h1 .accent:after{
-      content:"";
-      position:absolute;
-      left:3px;
-      right:5px;
-      bottom:-7px;
-      height:7px;
-      border-radius:99px;
-      background:var(--yellow);
-      transform:rotate(-1.5deg);
-      z-index:-1;
-    }
+.hero h1 .accent:after{
+  content:"";
+  position:absolute;
+  left:3px;
+  right:5px;
+  bottom:-7px;
+  height:7px;
+  border-radius:99px;
+  background:var(--yellow);
+  transform:rotate(-1.5deg);
+  z-index:-1;
+}
 
-    .hero-lead{
-      margin:28px 0 0;
-      font-size:clamp(1.1rem,1.8vw,1.34rem);
-      color:#57516a;
-      max-width:700px;
-    }
-
-    .hero-subsection{
-      margin-top:36px;
-    }
+.hero-lead{
+  margin:28px 0 0;
+  font-size:clamp(1.1rem,1.8vw,1.34rem);
+  color:#57516a;
+  max-width:700px;
+}
 
 .hero-section-title{
   display:inline-flex;
@@ -456,100 +437,95 @@
   background:linear-gradient(90deg,var(--violet) 0%,var(--violet) 72%,var(--yellow) 72%,var(--yellow) 100%);
 }
 
-    .tool-strip{
+.tool-strip{
   display:flex;
   flex-wrap:wrap;
   gap:10px;
   margin-top:3px;
 }
 
-    .tool{
-      display:flex;
-      align-items:center;
-      gap:8px;
-      min-height:44px;
-      padding:7px 11px;
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius:13px;
-      font-size:.78rem;
-      font-weight:850;
-      color:#332d4c;
-      box-shadow:0 5px 15px rgba(34,25,72,.035);
-      transition:.22s ease;
-    }
+.tool{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  min-height:44px;
+  padding:7px 11px;
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:13px;
+  font-size:.78rem;
+  font-weight:850;
+  color:#332d4c;
+  box-shadow:0 5px 15px rgba(34,25,72,.035);
+  transition:.22s ease;
+}
 
-    .tool:hover{
-      transform:translateY(-3px);
-      border-color:#cec4f5;
-      box-shadow:0 12px 25px rgba(109,74,255,.10);
-    }
+.tool:hover{
+  transform:translateY(-3px);
+  border-color:#cec4f5;
+  box-shadow:0 12px 25px rgba(109,74,255,.10);
+}
 
-    .logo{
-      width:25px;
-      height:25px;
-      object-fit:contain;
-      flex:0 0 25px;
-    }
+.logo{
+  width:25px;
+  height:25px;
+  object-fit:contain;
+  flex:0 0 25px;
+}
 
-    .hero-actions{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-    }
+.hero-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
 
-    .cta-logo{
-      width:18px;
-      height:18px;
-      object-fit:contain;
-      flex:0 0 18px;
-    }
+.cta-logo{
+  width:18px;
+  height:18px;
+  object-fit:contain;
+  flex:0 0 18px;
+}
 
 .portrait-wrap{
   position:relative;
   width:100%;
-  max-width:470px;
+  max-width:500px;
   margin-left:auto;
-  transform:translateY(-24px);
+  transform:translateY(-10px);
   animation:heroIn .9s .08s ease both;
 }
 
-@media (min-width:801px){
-  .portrait-wrap{
-    transform:translateY(-10px);
-  }
+.portrait-card{
+  position:relative;
+  overflow:hidden;
+  border-radius:34px;
+  background:#fff;
+  border:1px solid #ddd6f0;
+  box-shadow:var(--shadow);
+  padding:8px;
 }
 
-    .portrait-card{
-      position:relative;
-      overflow:hidden;
-      border-radius:34px;
-      background:#fff;
-      border:1px solid #ddd6f0;
-      box-shadow:var(--shadow);
-      padding:8px;
-    }
+.portrait-card:before{
+  content:"";
+  position:absolute;
+  inset:8px;
+  border-radius:27px;
+  background:linear-gradient(135deg,rgba(109,74,255,.10),transparent 40%,rgba(244,200,75,.13));
+  pointer-events:none;
+  z-index:2;
+  mix-blend-mode:multiply;
+}
 
-    .portrait-card:before{
-      content:"";
-      position:absolute;
-      inset:8px;
-      border-radius:27px;
-      background:linear-gradient(135deg,rgba(109,74,255,.10),transparent 40%,rgba(244,200,75,.13));
-      pointer-events:none;
-      z-index:2;
-      mix-blend-mode:multiply;
-    }
+.portrait-card img{
+  width:100%;
+  aspect-ratio:4/4.65;
+  object-fit:cover;
+  object-position:center top;
+  border-radius:27px;
+  position:relative;
+  z-index:1;
+}
 
-    .portrait-card img{
-      width:100%;
-      aspect-ratio:4/4.65;
-      object-fit:cover;
-      object-position:center top;
-      border-radius:27px;
-      position:relative;
-      z-index:1;
-    }
 .portrait-badge{
   position:absolute;
   z-index:4;
@@ -611,40 +587,20 @@
   justify-content:center;
   align-items:center;
   gap:10px;
-  margin-top:18px;
+  margin-top:8px;
   flex-wrap:wrap;
 }
 
-@media (min-width:801px){
-  .portrait-actions{
-    margin-top:8px;
-  }
-}
-
-  /* ---------- HERO DESKTOP SPACING FIX ---------- */
-
-@media (min-width:801px){
-
+@media (max-width:1000px) and (min-width:801px){
   .hero-grid{
-    position:relative;
+    column-gap:42px;
   }
 
-  .portrait-wrap{
-    position:absolute;
-    top:-10px;
-    right:0;
-    width:min(470px,42%);
-    max-width:470px;
-    margin-left:0;
-    transform:none;
+  .hero h1{
+    font-size:clamp(3.4rem,7vw,5.5rem);
   }
-
-  .portrait-actions{
-    margin-top:40px;
-  }
-
 }
-    
+
 /* ---------- CARDS ---------- */
 
 .problem-lab{
@@ -1705,18 +1661,34 @@
     row-gap:0;
   }
 
+  .hero-left,
+  .hero-side{
+    display:contents;
+  }
+
+  .hero-copy{
+    grid-area:copy;
+  }
+
   .portrait-wrap{
+    grid-area:portrait;
     margin:30px auto 0;
     max-width:470px;
     transform:none;
   }
 
   .portrait-actions{
+    grid-area:actions;
     margin-top:18px;
   }
 
-  .hero-connect,
+  .hero-connect{
+    grid-area:connect;
+    margin-top:30px;
+  }
+
   .hero-tools{
+    grid-area:tools;
     margin-top:30px;
   }
 
@@ -2025,100 +1997,110 @@
       <div class="container">
         <div class="hero-grid">
 
-          <!-- HERO INTRO -->
-          <div class="hero-copy">
-            <p class="eyebrow">DATA • ANALYTICS • PROBLEM SOLVING</p>
+          <!-- HERO LEFT -->
+          <div class="hero-left">
 
-            <h1>
-              Hi, I’m Saideep<br>
-              <span class="accent">Pallela.</span>
-            </h1>
+            <!-- HERO INTRO -->
+            <div class="hero-copy">
+              <p class="eyebrow">DATA • ANALYTICS • PROBLEM SOLVING</p>
 
-            <p class="hero-lead">
-              I solve business problems with data, turning complex questions into clear insights and practical solutions.
-            </p>
-          </div>
+              <h1>
+                Hi, I’m Saideep<br>
+                <span class="accent">Pallela.</span>
+              </h1>
 
-          <!-- HERO TOOLS -->
-          <div class="hero-subsection hero-tools">
-            <p class="hero-section-title">TOOLS I WORK WITH <span aria-hidden="true">↓</span></p>
-
-            <div class="tool-strip" aria-label="Tools I work with">
-              <div class="tool">
-                <img class="logo" src="assets/icons/sql-server.png" alt="Microsoft SQL Server logo">
-                <span>SQL Server</span>
-              </div>
-
-              <div class="tool">
-                <img class="logo" src="assets/icons/postgresql.png" alt="PostgreSQL logo">
-                <span>PostgreSQL</span>
-              </div>
-
-              <div class="tool">
-                <img class="logo" src="assets/icons/excel.png" alt="Microsoft Excel logo">
-                <span>Excel</span>
-              </div>
-
-              <div class="tool">
-                <img class="logo" src="assets/icons/python.png" alt="Python logo">
-                <span>Python</span>
-              </div>
-
-              <div class="tool">
-                <img class="logo" src="assets/icons/powerbi.png" alt="Microsoft Power BI logo">
-                <span>Power BI</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- HERO PROFILE -->
-          <div class="portrait-wrap">
-            <div class="portrait-card">
-              <img
-                src="assets/images/saideep-profile.png"
-                alt="Saideep Pallela, Data & Analytics Professional"
-                fetchpriority="high">
+              <p class="hero-lead">
+                I solve business problems with data, turning complex questions into clear insights and practical solutions.
+              </p>
             </div>
 
-            <div class="portrait-badge">
-              <i aria-hidden="true"></i>
-              Open to Data & Analytics Roles
+            <!-- HERO TOOLS -->
+            <div class="hero-subsection hero-tools">
+              <p class="hero-section-title">TOOLS I WORK WITH <span aria-hidden="true">↓</span></p>
+
+              <div class="tool-strip" aria-label="Tools I work with">
+                <div class="tool">
+                  <img class="logo" src="assets/icons/sql-server.png" alt="Microsoft SQL Server logo">
+                  <span>SQL Server</span>
+                </div>
+
+                <div class="tool">
+                  <img class="logo" src="assets/icons/postgresql.png" alt="PostgreSQL logo">
+                  <span>PostgreSQL</span>
+                </div>
+
+                <div class="tool">
+                  <img class="logo" src="assets/icons/excel.png" alt="Microsoft Excel logo">
+                  <span>Excel</span>
+                </div>
+
+                <div class="tool">
+                  <img class="logo" src="assets/icons/python.png" alt="Python logo">
+                  <span>Python</span>
+                </div>
+
+                <div class="tool">
+                  <img class="logo" src="assets/icons/powerbi.png" alt="Microsoft Power BI logo">
+                  <span>Power BI</span>
+                </div>
+              </div>
             </div>
 
-            <span class="portrait-think" aria-hidden="true">🤔</span>
+            <!-- HERO CONNECT -->
+            <div class="hero-subsection hero-connect">
+              <p class="hero-section-title">LET’S CONNECT <span aria-hidden="true">↓</span></p>
+
+              <div class="hero-actions">
+                <a class="btn btn-light" href="https://www.linkedin.com/in/saideeppallela/" target="_blank" rel="noopener noreferrer">
+                  <img src="assets/icons/linkedin.png" alt="" class="cta-logo">
+                  View LinkedIn Profile ↗
+                </a>
+
+                <a class="btn btn-light" href="https://github.com/saideppallela" target="_blank" rel="noopener noreferrer">
+                  <img src="assets/icons/github.png" alt="" class="cta-logo">
+                  Explore My GitHub ↗
+                </a>
+
+                <a class="btn btn-light" href="mailto:saideeppallela@gmail.com">
+                  <img src="assets/icons/gmail.png" alt="" class="cta-logo">
+                  Discuss an Opportunity ↗
+                </a>
+              </div>
+            </div>
+
           </div>
 
-          <!-- HERO ACTIONS -->
-          <div class="portrait-actions">
-            <a class="btn btn-primary" href="mailto:saideeppallela@gmail.com">
-              Let’s Work Together →
-            </a>
+          <!-- HERO RIGHT -->
+          <div class="hero-side">
 
-            <a class="btn btn-light" href="assets/documents/saideep-pallela-cv.pdf" download>
-              View My Resume ↓
-            </a>
-          </div>
+            <!-- HERO PROFILE -->
+            <div class="portrait-wrap">
+              <div class="portrait-card">
+                <img
+                  src="assets/images/saideep-profile.png"
+                  alt="Saideep Pallela, Data & Analytics Professional"
+                  fetchpriority="high">
+              </div>
 
-          <!-- HERO CONNECT -->
-          <div class="hero-subsection hero-connect">
-            <p class="hero-section-title">LET’S CONNECT <span aria-hidden="true">↓</span></p>
+              <div class="portrait-badge">
+                <i aria-hidden="true"></i>
+                Open to Data & Analytics Roles
+              </div>
 
-            <div class="hero-actions">
-              <a class="btn btn-light" href="https://www.linkedin.com/in/saideeppallela/" target="_blank" rel="noopener noreferrer">
-                <img src="assets/icons/linkedin.png" alt="" class="cta-logo">
-                View LinkedIn Profile ↗
+              <span class="portrait-think" aria-hidden="true">🤔</span>
+            </div>
+
+            <!-- HERO ACTIONS -->
+            <div class="portrait-actions">
+              <a class="btn btn-primary" href="mailto:saideeppallela@gmail.com">
+                Let’s Work Together →
               </a>
 
-              <a class="btn btn-light" href="https://github.com/saideppallela" target="_blank" rel="noopener noreferrer">
-                <img src="assets/icons/github.png" alt="" class="cta-logo">
-                Explore My GitHub ↗
-              </a>
-
-              <a class="btn btn-light" href="mailto:saideeppallela@gmail.com">
-                <img src="assets/icons/gmail.png" alt="" class="cta-logo">
-                Discuss an Opportunity ↗
+              <a class="btn btn-light" href="assets/documents/saideep-pallela-cv.pdf" download>
+                View My Resume ↓
               </a>
             </div>
+
           </div>
 
         </div>
