@@ -496,13 +496,19 @@
       flex:0 0 18px;
     }
 
-  .portrait-wrap{
+.portrait-wrap{
   position:relative;
   width:100%;
   max-width:470px;
   margin-left:auto;
   transform:translateY(-24px);
   animation:heroIn .9s .08s ease both;
+}
+
+@media (min-width:801px){
+  .portrait-wrap{
+    transform:translateY(-10px);
+  }
 }
 
     .portrait-card{
